@@ -198,12 +198,12 @@ class Pokemon extends Sprite {
 
 // -- set the boundaries/collisions with a class---
 class Boundary {
-    static width = 48   //12 * 400%
-    static height = 48  //12 * 400%
+    static width = 16   //12 * 400%
+    static height = 16  //12 * 400%
     constructor({ position }) {
         this.position = position
-        this.width = 48
-        this.height = 48
+        this.width = 16
+        this.height = 16
     }
     draw() {
         c.fillStyle = 'rgba(255, 0, 0, 0)'

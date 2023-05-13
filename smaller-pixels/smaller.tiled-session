@@ -1,0 +1,122 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "",
+    "expandedProjectPaths": [
+    ],
+    "exportAsImage.useCurrentScale": true,
+    "file.lastUsedOpenFilter": "All Files (*)",
+    "fileStates": {
+        "": {
+            "scaleInDock": 11
+        },
+        "#Basic Grass Biom things 1": {
+            "scaleInDock": 4
+        },
+        "#Basic Plants": {
+            "scaleInDock": 8
+        },
+        "#Chest": {
+            "scaleInDock": 2
+        },
+        "#Grass hill tiles v.2": {
+            "scaleInDock": 5.5
+        },
+        "#Grass tiles v.2": {
+            "scaleInDock": 1
+        },
+        "#Paths": {
+            "scaleInDock": 4
+        },
+        "#Simple Milk and grass item": {
+            "scaleInDock": 5.5
+        },
+        "#Tall Grass hill tiles v.2": {
+            "scaleInDock": 4
+        },
+        "#Water": {
+            "scaleInDock": 5.5
+        },
+        "#Wood Bridge": {
+            "scaleInDock": 5.5
+        },
+        "#Wooden House": {
+            "scaleInDock": 1.5
+        },
+        "#collision": {
+            "scaleInDock": 1
+        },
+        "smaller-map.json": {
+            "scale": 4,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 20.25,
+                "y": -10
+            }
+        },
+        "smaller-map.json#Basic Charakter Actions": {
+            "scaleInDock": 4
+        },
+        "smaller-map.json#Basic Charakter Spritesheet": {
+            "scaleInDock": 4
+        },
+        "smaller-map.json#Basic Grass Biom things 1": {
+            "scaleInDock": 4
+        },
+        "smaller-map.json#Basic Plants": {
+            "scaleInDock": 8
+        },
+        "smaller-map.json#Chest": {
+            "scaleInDock": 2
+        },
+        "smaller-map.json#Grass hill tiles v.2": {
+            "scaleInDock": 5.5
+        },
+        "smaller-map.json#Grass tiles v.2": {
+            "scaleInDock": 1
+        },
+        "smaller-map.json#Paths": {
+            "scaleInDock": 4
+        },
+        "smaller-map.json#Simple Milk and grass item": {
+            "scaleInDock": 5.5
+        },
+        "smaller-map.json#Tall Grass hill tiles v.2": {
+            "scaleInDock": 4
+        },
+        "smaller-map.json#Water": {
+            "scaleInDock": 5.5
+        },
+        "smaller-map.json#Wood Bridge": {
+            "scaleInDock": 5.5
+        },
+        "smaller-map.json#Wooden House": {
+            "scaleInDock": 1.5
+        },
+        "smaller-map.json#collision": {
+            "scaleInDock": 16
+        }
+    },
+    "last.exportedFilePath": "D:/Driner/Desktop/Codes/Javascript/Pokemon-game/smaller-pixels",
+    "last.imagePath": "D:/Driner/Downloads/Sprout Lands - Sprites - Basic pack (1)/Sprout Lands - Sprites - Basic pack/Color pallete",
+    "map.height": 4,
+    "map.lastUsedExportFilter": "All Files (*)",
+    "map.lastUsedFormat": "json",
+    "map.tileHeight": 4,
+    "map.tileWidth": 4,
+    "map.width": 16,
+    "openFiles": [
+    ],
+    "project": "smaller.tiled-project",
+    "recentFiles": [
+        "smaller-map.json"
+    ],
+    "tileset.embedInMap": true,
+    "tileset.tileSize": {
+        "height": 4,
+        "width": 4
+    },
+    "tileset.useTransparentColor": true
+}

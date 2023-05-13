@@ -2,30 +2,31 @@ const canvas = document.querySelector('canvas')
 const c = canvas.getContext('2d')
 // console.log(gsap)
 
-
+// canvas.width = 1355
+// canvas.height = 595
 canvas.width = 1024
 canvas.height = 576
 
 const collisionsMap = []
-for (let i = 0; i < collisions.length; i += 70) {
-    collisionsMap.push(collisions.slice(i, 70 + i))
+for (let i = 0; i < collisions.length; i += 210) {
+    collisionsMap.push(collisions.slice(i, 210 + i))
 }
 
 
 const battleZonesMap = []
-for (let i = 0; i < battleZonesData.length; i += 70) {
-    battleZonesMap.push(battleZonesData.slice(i, 70 + i))
+for (let i = 0; i < battleZonesData.length; i += 210) {
+    battleZonesMap.push(battleZonesData.slice(i, 210 + i))
 }
 
 const boundaries = []
 // -- boundary positioning --
 const offset = {
-    x: -110,
-    y: -450
+    x: -225,
+    y: -250
 }
 collisionsMap.forEach((row, i) => {
     row.forEach((symbol, j) => {
-        if (symbol === 1025)
+        if (symbol === 21635)
             boundaries.push(
                 new Boundary({
                     position: {
@@ -39,7 +40,7 @@ collisionsMap.forEach((row, i) => {
 const battleZones = []
 battleZonesMap.forEach((row, i) => {
     row.forEach((symbol, j) => {
-        if (symbol === 1025)
+        if (symbol === 21635)
             battleZones.push(
                 new Boundary({
                     position: {
@@ -52,35 +53,35 @@ battleZonesMap.forEach((row, i) => {
 
 // load the map
 const image = new Image()
-image.src = './assets/Driner Town.png'
+image.src = './assets/smaller-map.png'
 
 // load the foreground
 const foregroundImage = new Image()
-foregroundImage.src = './assets/driner-foreground.png'
+foregroundImage.src = './assets/smaller-map-foreground.png'
 
 // load the player images
 const playerDownImage = new Image()
-playerDownImage.src = './assets/playerDown.png'
+playerDownImage.src = './assets/bunny-down.png'
 
 const playerUpImage = new Image()
-playerUpImage.src = './assets/playerUp.png'
+playerUpImage.src = './assets/bunny-up.png'
 
 const playerLeftImage = new Image()
-playerLeftImage.src = './assets/playerLeft.png'
+playerLeftImage.src = './assets/bunny-left.png'
 
 const playerRightImage = new Image()
-playerRightImage.src = './assets/playerRight.png'
+playerRightImage.src = './assets/bunny-right.png'
 
 // player's Sprite
 const player = new Sprite({
     position: {
-        x: canvas.width / 2 - 192 / 4 / 2,
-        y: canvas.height / 2 - 68 / 4,
+        x: canvas.width / 2 - 256 / 4 / 2,
+        y: canvas.height / 2 - 64 / 4,
     },
     image: playerDownImage,
     frames: {
         max: 4,
-        hold: 12
+        hold: 4
     },
     sprites: {
         down: playerDownImage,
@@ -93,16 +94,16 @@ const player = new Sprite({
 // -- background positioning --
 const background = new Sprite({
     position: {
-        x: -110,
-        y: -450
+        x: -225,
+        y: -250
     },
     image: image
 })
 // -- foreground image
 const foreground = new Sprite({
     position: {
-        x: -110,
-        y: -450
+        x: -225,
+        y: -250
     },
     image: foregroundImage
 })
@@ -145,6 +146,7 @@ function animate() {
     battleZones.forEach((battleZone) => {
         battleZone.draw()
     })
+
     player.draw()
     foreground.draw()
 
@@ -159,13 +161,13 @@ function animate() {
         for (let i = 0; i < battleZones.length; i++) {
             const battleZone = battleZones[i]
             const overlappingArea =  (Math.min(player.position.x + player.width, battleZone.position.x + battleZone.width) - Math.max(player.position.x, battleZone.position.x)) * 
-                                    (Math.min(player.position.y + player.height, battleZone.position.y + battleZone.height) - Math.max(player.position.y, battleZone.position.y))
-
-
+                                    (Math.min(player.position.y + player.height, battleZone.position.y + battleZone.height) - Math.max(player.position.y, battleZone.position.y)) 
+                                           
             if (rectangularCollision({rectangle1: player,rectangle2: battleZone}) &&
-                overlappingArea > (player.width * player.height) /2 && 
-                Math.random() < 0.01
+                // overlappingArea > (player.width * player.height) /4 && 
+                Math.random() < 0.001
             ) {
+                
                 console.log("battle Activated!")
                 // deactivate current animation loop and start battle animation instead
                 window.cancelAnimationFrame(animationId)
@@ -216,7 +218,7 @@ function animate() {
                 rectangle2: {
                     ...boundary, position: {
                         x: boundary.position.x,
-                        y: boundary.position.y + 3
+                        y: boundary.position.y + 5
                     }
                 }
             })) {
@@ -228,7 +230,7 @@ function animate() {
 
         if (moving)
             movables.forEach((movable) => {
-                movable.position.y += 3
+                movable.position.y += 5
             })
     }
     // A
@@ -241,7 +243,7 @@ function animate() {
                 rectangle1: player,
                 rectangle2: {
                     ...boundary, position: {
-                        x: boundary.position.x + 3,
+                        x: boundary.position.x + 5,
                         y: boundary.position.y
                     }
                 }
@@ -253,7 +255,7 @@ function animate() {
         }
         if (moving)
             movables.forEach((movable) => {
-                movable.position.x += 3
+                movable.position.x += 5
             })
     }
     // S
@@ -267,7 +269,7 @@ function animate() {
                 rectangle2: {
                     ...boundary, position: {
                         x: boundary.position.x,
-                        y: boundary.position.y - 3
+                        y: boundary.position.y - 5
                     }
                 }
             })) {
@@ -278,7 +280,7 @@ function animate() {
         }
         if (moving)
             movables.forEach((movable) => {
-                movable.position.y -= 3
+                movable.position.y -= 5
             })
     }
     // D
@@ -291,7 +293,7 @@ function animate() {
                 rectangle1: player,
                 rectangle2: {
                     ...boundary, position: {
-                        x: boundary.position.x - 3,
+                        x: boundary.position.x - 5,
                         y: boundary.position.y
                     }
                 }
@@ -303,12 +305,11 @@ function animate() {
         }
         if (moving)
             movables.forEach((movable) => {
-                movable.position.x -= 3
+                movable.position.x -= 5
             })
     }
 }
 // animate()
-
 
 
 
@@ -355,6 +356,8 @@ window.addEventListener('keyup', (e) => {
 })
 
 
+
+//--- click the screen to play sound
 let clicked = false
 addEventListener('click', () => {
     if (!clicked) {
