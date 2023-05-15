@@ -11,19 +11,35 @@ const attacks = {
         type: 'Fire',
         color: 'red'
     },
-    Ember: {
-        name: "Ember",
-        damage: 50,
+    Fireblast: {
+        name: 'Fireblast',
+        damage: 70,
         type: 'Fire',
         color: 'red'
     },
 
 
     //grass
-    Cut: {
-        name: "Ember",
-        damage: 30,
+    ThrowAxe: {
+        name: "ThrowAxe",
+        damage: 50,
+        type: 'Physical',
+        color: 'orange'
+    },
+
+    //grass
+    PlantSpike: {
+        name: "PlantSpike",
+        damage: 50,
         type: 'Grass',
         color: 'green'
+    },
+
+    //Run!!!!!!
+    Run: {
+        name: "Run",
+        damage: 30,
+        type: 'Just run!!',
+        color: 'black'
     }
 }

@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "",
+    "activeFile": "smaller-map.json",
     "expandedProjectPaths": [
     ],
     "exportAsImage.useCurrentScale": true,
@@ -48,42 +48,71 @@
         "#collision": {
             "scaleInDock": 1
         },
-        "smaller-map.json": {
+        "bunny character.json": {
             "scale": 4,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 20.25,
-                "y": -10
+                "x": 19,
+                "y": -11.25
+            }
+        },
+        "bunny character.json#Basic Charakter Actions": {
+            "scaleInDock": 4
+        },
+        "bunny character.json#Basic Charakter Spritesheet": {
+            "scaleInDock": 4
+        },
+        "smaller-map.json": {
+            "scale": 8,
+            "selectedLayer": 6,
+            "viewCenter": {
+                "x": 22.375,
+                "y": -3.125
             }
         },
         "smaller-map.json#Basic Charakter Actions": {
-            "scaleInDock": 4
+            "scaleInDock": 3
         },
         "smaller-map.json#Basic Charakter Spritesheet": {
             "scaleInDock": 4
         },
         "smaller-map.json#Basic Grass Biom things 1": {
-            "scaleInDock": 4
+            "scaleInDock": 3
         },
         "smaller-map.json#Basic Plants": {
-            "scaleInDock": 8
-        },
-        "smaller-map.json#Chest": {
-            "scaleInDock": 2
-        },
-        "smaller-map.json#Grass hill tiles v.2": {
             "scaleInDock": 5.5
         },
-        "smaller-map.json#Grass tiles v.2": {
+        "smaller-map.json#Chest": {
+            "scaleInDock": 3
+        },
+        "smaller-map.json#Color pallete in aseprite - screenshot": {
+            "scaleInDock": 3
+        },
+        "smaller-map.json#Fire": {
+            "scaleInDock": 5.5
+        },
+        "smaller-map.json#Grass hill tiles v.2": {
             "scaleInDock": 1
         },
+        "smaller-map.json#Grass tiles v.2": {
+            "scaleInDock": 3
+        },
         "smaller-map.json#Paths": {
+            "scaleInDock": 4
+        },
+        "smaller-map.json#PlantSpike": {
             "scaleInDock": 4
         },
         "smaller-map.json#Simple Milk and grass item": {
             "scaleInDock": 5.5
         },
         "smaller-map.json#Tall Grass hill tiles v.2": {
+            "scaleInDock": 2
+        },
+        "smaller-map.json#TilesetNature": {
+            "scaleInDock": 0.75
+        },
+        "smaller-map.json#Tools": {
             "scaleInDock": 4
         },
         "smaller-map.json#Water": {
@@ -97,10 +126,13 @@
         },
         "smaller-map.json#collision": {
             "scaleInDock": 16
+        },
+        "smaller-map.json#tileset": {
+            "scaleInDock": 0.75
         }
     },
     "last.exportedFilePath": "D:/Driner/Desktop/Codes/Javascript/Pokemon-game/smaller-pixels",
-    "last.imagePath": "D:/Driner/Downloads/Sprout Lands - Sprites - Basic pack (1)/Sprout Lands - Sprites - Basic pack/Color pallete",
+    "last.imagePath": "D:/Driner/Downloads/NinjaAdventure(SupporterEdition)/NinjaAdventure/FX/Projectile",
     "map.height": 4,
     "map.lastUsedExportFilter": "All Files (*)",
     "map.lastUsedFormat": "json",
@@ -108,9 +140,12 @@
     "map.tileWidth": 4,
     "map.width": 16,
     "openFiles": [
+        "smaller-map.json",
+        "bunny character.json"
     ],
     "project": "smaller.tiled-project",
     "recentFiles": [
+        "bunny character.json",
         "smaller-map.json"
     ],
     "tileset.embedInMap": true,

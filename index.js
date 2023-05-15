@@ -72,6 +72,8 @@ playerLeftImage.src = './assets/bunny-left.png'
 const playerRightImage = new Image()
 playerRightImage.src = './assets/bunny-right.png'
 
+const player_movement_speed = 4
+
 // player's Sprite
 const player = new Sprite({
     position: {
@@ -218,7 +220,7 @@ function animate() {
                 rectangle2: {
                     ...boundary, position: {
                         x: boundary.position.x,
-                        y: boundary.position.y + 5
+                        y: boundary.position.y + player_movement_speed
                     }
                 }
             })) {
@@ -230,7 +232,7 @@ function animate() {
 
         if (moving)
             movables.forEach((movable) => {
-                movable.position.y += 5
+                movable.position.y += player_movement_speed
             })
     }
     // A
@@ -243,7 +245,7 @@ function animate() {
                 rectangle1: player,
                 rectangle2: {
                     ...boundary, position: {
-                        x: boundary.position.x + 5,
+                        x: boundary.position.x + player_movement_speed,
                         y: boundary.position.y
                     }
                 }
@@ -255,7 +257,7 @@ function animate() {
         }
         if (moving)
             movables.forEach((movable) => {
-                movable.position.x += 5
+                movable.position.x += player_movement_speed
             })
     }
     // S
@@ -269,7 +271,7 @@ function animate() {
                 rectangle2: {
                     ...boundary, position: {
                         x: boundary.position.x,
-                        y: boundary.position.y - 5
+                        y: boundary.position.y - player_movement_speed
                     }
                 }
             })) {
@@ -280,7 +282,7 @@ function animate() {
         }
         if (moving)
             movables.forEach((movable) => {
-                movable.position.y -= 5
+                movable.position.y -= player_movement_speed
             })
     }
     // D
@@ -293,7 +295,7 @@ function animate() {
                 rectangle1: player,
                 rectangle2: {
                     ...boundary, position: {
-                        x: boundary.position.x - 5,
+                        x: boundary.position.x - player_movement_speed,
                         y: boundary.position.y
                     }
                 }
@@ -305,7 +307,7 @@ function animate() {
         }
         if (moving)
             movables.forEach((movable) => {
-                movable.position.x -= 5
+                movable.position.x -= player_movement_speed
             })
     }
 }
@@ -357,8 +359,18 @@ window.addEventListener('keyup', (e) => {
 
 
 
-//--- click the screen to play sound
+
+
+
+
+//--- click the screen to play sound ----
 let clicked = false
+addEventListener('keydown', () => {
+    if (!clicked) {
+        audio.map.play()
+        clicked = true
+    }
+})
 addEventListener('click', () => {
     if (!clicked) {
         audio.map.play()

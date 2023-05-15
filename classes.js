@@ -190,6 +190,156 @@ class Pokemon extends Sprite {
                     x: this.position.x
                 })
                 break
+
+
+                case 'Fireblast':
+                    //play  fireball's initial sound
+                audio.initFireball.play()
+                const fireBlastImage = new Image()
+                fireBlastImage.src = './assets/fireball.png'
+                const fireblast = new Sprite({
+                    position: {
+                        x: this.position.x,
+                        y: this.position.y
+                    },
+                    image: fireBlastImage,
+                    frames: {
+                        max: 4,
+                        hold: 10
+                    },
+                    animate: true,
+                    rotation
+                })
+                
+                renderedSprites.splice(1, 0, fireblast)
+
+                gsap.to(fireblast.position, {
+                    x: recipient.position.x,
+                    y: recipient.position.y,
+                    onComplete: () => {
+                        // Enemy gets hit
+                        audio.fireballHit.play()
+                        gsap.to(healthBar, {
+                            width: recipient.health + '%'
+                        })
+                        gsap.to(recipient.position, {
+                            x: recipient.position.x + 10,
+                            yoyo: true,
+                            repeat: 5,
+                            duration: 0.08
+                        })
+                        gsap.to(recipient, {
+                            opacity: 0,
+                            repeat: 5,
+                            yoyo: true,
+                            duration: 0.08
+                        })
+                        renderedSprites.splice(1, 1)
+                    }
+                })
+                break;
+
+                case 'ThrowAxe':
+                    //play  fireball's initial sound
+                audio.initFireball.play()
+                const axeImage = new Image()
+                axeImage.src = './assets/axe_throw.png'
+                const throwAxe = new Sprite({
+                    position: {
+                        x: this.position.x,
+                        y: this.position.y
+                    },
+                    image: axeImage,
+                    frames: {
+                        max: 4,
+                        hold: 10
+                    },
+                    animate: true,
+                    rotation
+                })
+                
+                renderedSprites.splice(1, 0, throwAxe)
+
+                gsap.to(throwAxe.position, {
+                    x: recipient.position.x,
+                    y: recipient.position.y,
+                    onComplete: () => {
+                        // Enemy gets hit
+                        audio.fireballHit.play()
+                        gsap.to(healthBar, {
+                            width: recipient.health + '%'
+                        })
+                        gsap.to(recipient.position, {
+                            x: recipient.position.x + 10,
+                            yoyo: true,
+                            repeat: 5,
+                            duration: 0.08
+                        })
+                        gsap.to(recipient, {
+                            opacity: 0,
+                            repeat: 5,
+                            yoyo: true,
+                            duration: 0.08
+                        })
+                        renderedSprites.splice(1, 1)
+                    }
+                })
+                break;
+
+
+                case 'PlantSpike':
+                    //play  fireball's initial sound
+                audio.initFireball.play()
+                const plantSpikeImage = new Image()
+                plantSpikeImage.src = './assets/Plant-Spike.png'
+                const plantSpike = new Sprite({
+                    position: {
+                        x: this.position.x,
+                        y: this.position.y
+                    },
+                    image: plantSpikeImage,
+                    frames: {
+                        max: 4,
+                        hold: 10
+                    },
+                    animate: true,
+                    rotation
+                })
+                
+                renderedSprites.splice(1, 0, plantSpike)
+
+                gsap.to(plantSpike.position, {
+                    x: recipient.position.x,
+                    y: recipient.position.y,
+                    onComplete: () => {
+                        // Enemy gets hit
+                        audio.explosion.play()
+                        gsap.to(healthBar, {
+                            width: recipient.health + '%'
+                        })
+                        gsap.to(recipient.position, {
+                            x: recipient.position.x + 10,
+                            yoyo: true,
+                            repeat: 5,
+                            duration: 0.08
+                        })
+                        gsap.to(recipient, {
+                            opacity: 0,
+                            repeat: 5,
+                            yoyo: true,
+                            duration: 0.08
+                        })
+                        renderedSprites.splice(1, 1)
+                    }
+                })
+                break;
+
+
+
+                // if player chose to run!!!!
+                case 'Run':
+                    document.querySelector('#dialogueBox').innerHTML = 'Sorry, there is no turning back!!! (just kidding, this feature is still under development so you have no choice to fight XD)'
+                break;
         }
     }
 }

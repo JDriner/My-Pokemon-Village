@@ -12,7 +12,7 @@ const battleBackground = new Sprite({
 
 // set the pokemons
 let draggle // enemy
-let emby    // hero
+let snowball    // hero
 let renderedSprites
 let battleAnimationId
 let queue
@@ -26,11 +26,11 @@ function initBattle() {
     document.querySelector('#attacksBox').replaceChildren()
 
     draggle = new Pokemon(pokemons.Draggle)
-    emby = new Pokemon(pokemons.Emby)
-    renderedSprites = [draggle, emby]
+    snowball = new Pokemon(pokemons.Snowball)
+    renderedSprites = [draggle, snowball]
     queue = []
 
-    emby.attacks.forEach((attack) => {
+    snowball.attacks.forEach((attack) => {
         const button = document.createElement('button')
         button.innerHTML = attack.name
         document.querySelector('#attacksBox').append(button)
@@ -40,7 +40,7 @@ function initBattle() {
     document.querySelectorAll('button').forEach((button) => {
         button.addEventListener('click', (e) => {
             const selectedAttack = attacks[e.currentTarget.innerHTML]
-            emby.attack({
+            snowball.attack({
                 attack: selectedAttack,
                 recipient: draggle,
                 renderedSprites
@@ -77,14 +77,14 @@ function initBattle() {
             queue.push(() => {
                 draggle.attack({
                     attack: randomAttack,
-                    recipient: emby,
+                    recipient: snowball,
                     renderedSprites
                 })
 
-                //If EMBY FAINTS AFTER DRAGGLES ATTACK
-                if (emby.health <= 0) {
+                //If HERO FAINTS AFTER DRAGGLES ATTACK
+                if (snowball.health <= 0) {
                     queue.push(() => {
-                        emby.faint()
+                        snowball.faint()
                     })
                     //fade back to black
                     queue.push(() => {
