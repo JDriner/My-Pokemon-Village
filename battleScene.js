@@ -11,11 +11,22 @@ const battleBackground = new Sprite({
 })
 
 // set the pokemons
-let draggle // enemy
+let enemy // enemy
 let snowball    // hero
 let renderedSprites
 let battleAnimationId
 let queue
+
+function getRandomPokemon(pokemons) {
+    const keys = Object.keys(pokemons);
+    var randomNumber = Math.floor(Math.random() * keys.length);
+    // console.log(randomNumber)
+    if (randomNumber == 0) {
+        return getRandomPokemon(pokemons);
+    } else {
+        return keys[randomNumber];
+    }
+}
 
 //reinitialize battle scene after it closed
 function initBattle() {
@@ -25,10 +36,15 @@ function initBattle() {
     document.querySelector('#playerHealthBar').style.width = '100%'
     document.querySelector('#attacksBox').replaceChildren()
 
-    draggle = new Pokemon(pokemons.Draggle)
+    const randomPokemon = getRandomPokemon(pokemons)
+    // console.log(randomPokemon)
+    enemy = new Pokemon(pokemons[randomPokemon])
     snowball = new Pokemon(pokemons.Snowball)
-    renderedSprites = [draggle, snowball]
+    renderedSprites = [enemy, snowball]
     queue = []
+
+    document.querySelector('#hero-name').innerHTML = 'Snowball'
+    document.querySelector('#enemy-name').innerHTML = randomPokemon
 
     snowball.attacks.forEach((attack) => {
         const button = document.createElement('button')
@@ -42,13 +58,13 @@ function initBattle() {
             const selectedAttack = attacks[e.currentTarget.innerHTML]
             snowball.attack({
                 attack: selectedAttack,
-                recipient: draggle,
+                recipient: enemy,
                 renderedSprites
             })
 
-            if (draggle.health <= 0) {
+            if (enemy.health <= 0) {
                 queue.push(() => {
-                    draggle.faint()
+                    enemy.faint()
                 })
 
                 //fade back to black
@@ -72,16 +88,16 @@ function initBattle() {
             }
 
             // draggle or enemy attacks from here
-            const randomAttack = draggle.attacks[Math.floor(Math.random() * draggle.attacks.length)]
+            const randomAttack = enemy.attacks[Math.floor(Math.random() * enemy.attacks.length)]
 
             queue.push(() => {
-                draggle.attack({
+                enemy.attack({
                     attack: randomAttack,
                     recipient: snowball,
                     renderedSprites
                 })
 
-                //If HERO FAINTS AFTER DRAGGLES ATTACK
+                //If HERO FAINTS AFTER ENEMY ATTACK
                 if (snowball.health <= 0) {
                     queue.push(() => {
                         snowball.faint()

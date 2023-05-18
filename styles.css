@@ -121,3 +121,22 @@ h1 {
 #userInterface {
     display: none;
 }
+
+
+.menu {
+    color: white;
+    overflow-wrap: break-word;
+    /* inline-size: 326px; */
+    position: absolute;
+    right: 0;
+    width: 450px;
+}
+
+.menu ul {
+    list-style: none;
+}
+
+.menu li {
+    list-style: none;
+    padding-top: 10px;
+}

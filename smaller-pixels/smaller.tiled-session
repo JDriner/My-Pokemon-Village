@@ -52,8 +52,8 @@
             "scale": 4,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 19,
-                "y": -11.25
+                "x": 48.25,
+                "y": 8.125
             }
         },
         "bunny character.json#Basic Charakter Actions": {
@@ -66,8 +66,8 @@
             "scale": 8,
             "selectedLayer": 6,
             "viewCenter": {
-                "x": 22.375,
-                "y": -3.125
+                "x": 32,
+                "y": 7.9375
             }
         },
         "smaller-map.json#Basic Charakter Actions": {
@@ -132,7 +132,7 @@
         }
     },
     "last.exportedFilePath": "D:/Driner/Desktop/Codes/Javascript/Pokemon-game/smaller-pixels",
-    "last.imagePath": "D:/Driner/Downloads/NinjaAdventure(SupporterEdition)/NinjaAdventure/FX/Projectile",
+    "last.imagePath": "D:/Driner/Downloads/NinjaAdventure(SupporterEdition)/NinjaAdventure/Actor/Monsters",
     "map.height": 4,
     "map.lastUsedExportFilter": "All Files (*)",
     "map.lastUsedFormat": "json",

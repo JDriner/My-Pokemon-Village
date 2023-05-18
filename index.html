@@ -13,7 +13,17 @@
 </head>
 
 <body>
+    <div class="menu">
+        <h1>Menu</h1>
+        <ul>
+            <li>W - to move up</li>
+            <li>A - to move right</li>
+            <li>S - to move down</li>
+            <li>D - to move left</li>
+          </ul>
+    </div>
     <div style="display: inline-block; position: relative;">
+
         <div id="overlappingDiv"></div>
 
         <canvas></canvas>
@@ -21,7 +31,7 @@
         <div id="userInterface">
             <!-- ENEMY -->
             <div class="attacker-info-box">
-                <h1 class="hero-name">Draggle</h1>
+                <h1 class="hero-name" id="enemy-name"></h1>
                 <div class="bar">
                     <div class="full-bar"></div>
                     <div id="enemyHealthBar" class="health-bar"></div>
@@ -30,7 +40,7 @@
 
             <!-- HERO -->
             <div class="hero-info-box">
-                <h1 class="hero-name">Emby</h1>
+                <h1 class="hero-name" id="hero-name"></h1>
                 <div class="bar">
                     <div class="full-bar"></div>
                     <div id="playerHealthBar" class="health-bar"></div>
@@ -46,7 +56,11 @@
                 </div>
             </div>
         </div>
+
+
+
     </div>
+
 </body>
 
 <!-- GSAP JS CDN -->
